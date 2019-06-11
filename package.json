@@ -1,0 +1,16 @@
+{
+  "name": "lava",
+  "version": "0.0.1",
+  "repository": "https://github.com/WarsawLO/lava",
+  "author": "micorix",
+  "license": "MIT",
+  "main": "./src/Lava.js",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "decode-entities": "^1.0.7",
+    "node-fetch": "^2.6.0",
+    "puppeteer": "^1.17.0",
+    "turndown": "^5.0.3"
+  }
+}
