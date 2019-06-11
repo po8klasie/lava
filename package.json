@@ -1,7 +1,10 @@
 {
-  "name": "lava",
+  "name": "@warsawlo/lava",
   "version": "0.0.1",
-  "repository": "https://github.com/WarsawLO/lava",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WarsawLO/lava.git"
+  },
   "author": "micorix",
   "license": "MIT",
   "main": "./src/Lava.js",
@@ -12,5 +15,14 @@
     "node-fetch": "^2.6.0",
     "puppeteer": "^1.17.0",
     "turndown": "^5.0.3"
+  },
+  "description": "API wrapper for Vulcan recruitment system.",
+  "bugs": {
+    "url": "https://github.com/WarsawLO/lava/issues"
+  },
+  "homepage": "https://github.com/WarsawLO/lava#readme",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

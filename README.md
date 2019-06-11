@@ -8,7 +8,7 @@ yarn add @warsawlo/lava
 ```
 
 ## Usage
-
+Warning: This lib is still in beta. You can get up to 5 search results entries.
 ```javascript
 const fs = require('fs')
 
@@ -29,7 +29,10 @@ const Lava = require('./src/Lava')({
     query: 'batorego',
     city: 'Warszawa'
   }))
-  results.pipe(fs.createWriteStream('./schools.json'))
+  await Search.cleanUp()
+  results
+  .pipe(searchResultsToJSON)
+  .pipe(fs.createWriteStream('./schools.json'))
 
 
   const school = new Lava.School({

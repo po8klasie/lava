@@ -26,13 +26,11 @@ module.exports = class Search{
             this.page.waitForNavigation(),
             this.page.click(`[id='form:switchToMapBtn']`),
         ])
-        console.log('Setting up the page finished')
         const scripts = (await this.page.$$eval(`script`, nodes => nodes.map(n => n.innerText))).join(' ')
         const regex = /marker\.bindPopup\('<a href="offer_school_details_pg\.xhtml\?schoolId=(\d+)">(.+)<\/a>'\)/g
         let match = []
         let i = 0
         let limit = 5
-        console.log('Starting processing...')
         const schoolsStream = new Readable({
             objectMode: true
         })
@@ -41,7 +39,6 @@ module.exports = class Search{
                 name: match[2],
                 id: match[1]
             })
-            console.log(`${i} ${match[2]}`)
             i++
         }
         schoolsStream.push(null)

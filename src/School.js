@@ -40,13 +40,13 @@ module.exports = class School{
         return this.$('.cms').map((i, el) => ({
             title: this.$(el).prev().text(),
             content: TurndownService.turndown(this.$(el).html())
-        }))
+        })).get()
     }
     getAdditionalInfo(){
                 return {
             isPublic: /Status publiczności: (Publiczna|Niepubliczna)/
                     .exec(this.$('#workspaceWrapper').text())[1],
-            disabledFriendly: /Budynek przystosowany dla osób niepełnosprawnych: (Przystosowany częściowo|Nieprzystosowany)/
+            disabledFriendly: /Budynek przystosowany dla osób niepełnosprawnych: (Przystosowany częściowo|Nieprzystosowany|Przystosowany)/
                             .exec(this.$('#workspaceWrapper').text())[1]
         }
         // this.$('#workspaceWrapper').text()
