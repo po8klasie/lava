@@ -8,7 +8,6 @@ yarn add @warsawlo/lava
 ```
 
 ## Usage
-Warning: This lib is still in beta. You can get up to 5 search results entries.
 ```javascript
 const fs = require('fs')
 
@@ -47,4 +46,4 @@ const Lava = require('./src/Lava')({
 ```
 
 ## Docs
-Soon
+To view docs go to [our wiki](https://github.com/WarsawLO/lava/wiki)

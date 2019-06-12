@@ -30,11 +30,11 @@ module.exports = class Search{
         const regex = /marker\.bindPopup\('<a href="offer_school_details_pg\.xhtml\?schoolId=(\d+)">(.+)<\/a>'\)/g
         let match = []
         let i = 0
-        let limit = 5
+        let limit = config.limit || -1
         const schoolsStream = new Readable({
             objectMode: true
         })
-            while ((match = regex.exec(scripts)) != null && i <= limit) {
+            while ((match = regex.exec(scripts)) != null && (limit === -1 || i <= limit)) {
             schoolsStream.push({
                 name: match[2],
                 id: match[1]

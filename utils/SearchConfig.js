@@ -16,6 +16,9 @@ module.exports = class SearchConfig{
             await this.page.select(`[id='form:${selectId}Select']`, mapping[this.config[name]])
         }
     }
+    get limit(){
+        return this.config.limit
+    }
     async fillForm(){
       
         await this._checkForParam({
